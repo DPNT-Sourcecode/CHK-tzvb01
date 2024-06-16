@@ -5,9 +5,9 @@ import befaster.runner.SolutionNotImplementedException;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
         int len = skus.length();
-        int countA = 0, countB = 0, countC = 0, countD = 0, countE = 0, countF = 0, aux;
-        int[] prices = new int[25];
-        int[] counter = new int[25];
+        int aux;
+        int[] prices = new int[26];
+        int[] counter = new int[26];
         int total = 0;
         for (int i = 0; i < len; i++) {
             if (skus.charAt(i) == 'A') {
@@ -67,52 +67,46 @@ public class CheckoutSolution {
             }
         }
 
-        if (countA > 4) {
-            while (countA > 4) {
+        if (counter[0] > 4) {
+            while (counter[0] > 4) {
                 total += 200;
-                countA -= 5;
+                counter[0] -= 5;
             }
         }
 
-        if (countA > 2) {
-            while (countA > 2) {
+        if (counter[0] > 2) {
+            while (counter[0] > 2) {
                 total += 130;
-                countA -= 3;
+                counter[0] -= 3;
             }
         }
-        aux = countE;
-        if (countE > 1) {
-            while (countB > 0 && aux > 1) {
-                countB -= 1;
+        aux = counter[4];
+        if (counter[4] > 1) {
+            while (counter[1] > 0 && aux > 1) {
+                counter[1] -= 1;
                 aux -= 2;
             }
         }
 
-        if (countB > 1) {
-            while (countB > 1) {
+        if (counter[1] > 1) {
+            while (counter[1] > 1) {
                 total += 45;
-                countB -= 2;
+                counter[1] -= 2;
             }
         }
 
-        aux = countF;
-        if (countF > 2) {
-            while (countF > 1 && aux > 1) {
-                countF -= 1;
+        aux = counter[5];
+        if (counter[5] > 2) {
+            while (counter[5] > 1 && aux > 1) {
+                counter[5] -= 1;
                 aux -= 3;
             }
         }
 
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 26; i++) {
             total += counter[i] * prices[i];
         }
 
         return total;
     }
 }
-
-
-
-
-
-
