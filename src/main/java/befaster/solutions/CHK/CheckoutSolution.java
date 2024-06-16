@@ -55,9 +55,9 @@ public class CheckoutSolution {
 
         aux = countF;
         if (countF > 1) {
-            while (countF > 0 && aux > 1) {
+            while (countF > 1 && aux > 1) {
                 countF -= 1;
-                aux -= 2;
+                aux -= 3;
             }
         }
 
@@ -66,5 +66,6 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
