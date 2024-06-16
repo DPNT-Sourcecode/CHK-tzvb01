@@ -35,11 +35,12 @@ public class CheckoutSolution {
             }
         }
 
-        total = countA * 50 + countB * 30 + countC * 20 + countD * 15;
+        total = total + countA * 50 + countB * 30 + countC * 20 + countD * 15;
 
         return total;
     }
 }
+
 
 
 
