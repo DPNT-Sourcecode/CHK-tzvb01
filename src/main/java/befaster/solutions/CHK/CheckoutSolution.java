@@ -178,7 +178,7 @@ public class CheckoutSolution {
             }
         }
 
-        if (counter[25] + counter[24] + counter[23] + counter[19] + counter[18] > 3) {
+        if (counter[25] + counter[24] + counter[23] + counter[19] + counter[18] > 2) {
             if (counter[25] > 2) { // Z
                 while (counter[25] > 2) {
                     total += 45;
@@ -327,4 +327,5 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
