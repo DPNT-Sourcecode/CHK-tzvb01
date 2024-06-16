@@ -339,7 +339,7 @@ public class CheckoutSolution {
                     total += 45;
                     counter[23]--;
                     counter[18]--;
-                    counter[1239]--;
+                    counter[19]--;
                 }
                 if (counter[18] > 0 && counter[24] > 0) {// XSY
                     total += 45;
@@ -369,3 +369,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
