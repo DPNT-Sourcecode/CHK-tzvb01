@@ -24,11 +24,22 @@ public class CheckoutSolution {
         if (countA > 2) {
             while (countA > 2) {
                 total += 130;
+                countA -= 3;
             }
         }
+
+        if (countB > 1) {
+            while (countA > 1) {
+                total += 45;
+                countB -= 2;
+            }
+        }
+
+        total = countA * 50 + countB * 30 + countC * 20 + countD * 15;
 
         return total;
     }
 }
+
 
 
