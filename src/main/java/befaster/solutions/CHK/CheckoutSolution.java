@@ -217,6 +217,27 @@ public class CheckoutSolution {
                 counter[18] -= 2;
             }
 
+            while (counter[25] > 0) {
+                if (counter[18] > 0 && counter[19] > 0) {// ZST
+                    total += 45;
+                    counter[25]--;
+                    counter[18]--;
+                    counter[19]--;
+                }
+                if (counter[18] > 0 && counter[24] > 0) {// ZSY
+                    total += 45;
+                    counter[25]--;
+                    counter[18]--;
+                    counter[24]--;
+                }
+                if (counter[19] > 0 && counter[24] > 0) {// ZTY
+                    total += 45;
+                    counter[25]--;
+                    counter[19]--;
+                    counter[24]--;
+                }
+            }
+
             if (counter[18] > 2) { // S
                 while (counter[18] > 2) {
                     total += 45;
@@ -327,5 +348,6 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
