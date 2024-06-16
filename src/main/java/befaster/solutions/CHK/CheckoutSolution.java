@@ -105,10 +105,6 @@ public class CheckoutSolution {
             }
         }
 
-        for (int i = 0; i < 26; i++) {
-            total += counter[i] * prices[i];
-        }
-
         if (counter[7] > 9) { // H
             while (counter[7] > 9) {
                 total += 80;
@@ -160,7 +156,33 @@ public class CheckoutSolution {
             }
         }
 
+        aux = counter[20];
+        if (counter[20] > 3) {// U
+            while (counter[20] > 2 && aux > 2) {
+                counter[20] -= 1;
+                aux -= 4;
+            }
+        }
+
+        if (counter[21] > 2) { // V
+            while (counter[21] > 2) {
+                total += 130;
+                counter[21] -= 3;
+            }
+        }
+
+        if (counter[21] > 1) {// V
+            while (counter[21] > 1) {
+                total += 90;
+                counter[21] -= 2;
+            }
+        }
+
+        for (int i = 0; i < 26; i++) {
+            total += counter[i] * prices[i];
+        }
         return total;
     }
 }
+
 
