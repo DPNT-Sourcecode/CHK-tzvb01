@@ -16,6 +16,8 @@ public class CheckoutSolution {
                 countC++;
             } else if (skus.charAt(i) == 'D') {
                 countD++;
+            } else if (skus.charAt(i) == 'E') {
+                countE++;
             } else {
                 return -1;
             }
@@ -54,3 +56,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
