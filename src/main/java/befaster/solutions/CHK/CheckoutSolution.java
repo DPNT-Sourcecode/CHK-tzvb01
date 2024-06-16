@@ -5,7 +5,7 @@ import befaster.runner.SolutionNotImplementedException;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
         int len = skus.length();
-        int countA = 0, countB = 0, countC = 0, countD = 0, countE = 0, aux;
+        int countA = 0, countB = 0, countC = 0, countD = 0, countE = 0, countF = 0, aux;
         int total = 0;
         for (int i = 0; i < len; i++) {
             if (skus.charAt(i) == 'A') {
@@ -18,6 +18,8 @@ public class CheckoutSolution {
                 countD++;
             } else if (skus.charAt(i) == 'E') {
                 countE++;
+            } else if (skus.charAt(i) == 'F') {
+                countF++;
             } else {
                 return -1;
             }
@@ -51,9 +53,18 @@ public class CheckoutSolution {
             }
         }
 
-        total = total + countA * 50 + countB * 30 + countC * 20 + countD * 15 + countE * 40;
+        aux = countF;
+        if (countF > 1) {
+            while (countF > 0 && aux > 1) {
+                countF -= 1;
+                aux -= 2;
+            }
+        }
+
+        total = total + countA * 50 + countB * 30 + countC * 20 + countD * 15 + countE * 40 + countF * 10;
 
         return total;
     }
 }
+
 
