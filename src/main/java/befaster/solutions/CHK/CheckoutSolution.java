@@ -178,9 +178,153 @@ public class CheckoutSolution {
             }
         }
 
+        if (counter[25] + counter[24] + counter[23] + counter[19] + counter[18] > 3) {
+            if (counter[25] > 2) { // Z
+                while (counter[25] > 2) {
+                    total += 45;
+                    counter[25] -= 3;
+                }
+            }
+            if (counter[25] > 1 && counter[24] > 0) { // ZY
+                total += 45;
+                counter[25] -= 2;
+                counter[24] -= 1;
+            }
+            if (counter[25] > 1 && counter[19] > 0) { // ZT
+                total += 45;
+                counter[25] -= 2;
+                counter[19] -= 1;
+            }
+            if (counter[25] > 1 && counter[18] > 0) { // ZS
+                total += 45;
+                counter[25] -= 2;
+                counter[18] -= 1;
+            }
+
+            if (counter[25] > 0 && counter[24] > 1) { // ZY
+                total += 45;
+                counter[25] -= 1;
+                counter[24] -= 2;
+            }
+            if (counter[25] > 0 && counter[19] > 1) { // ZT
+                total += 45;
+                counter[25] -= 1;
+                counter[19] -= 2;
+            }
+            if (counter[25] > 0 && counter[18] > 1) { // ZS
+                total += 45;
+                counter[25] -= 1;
+                counter[18] -= 2;
+            }
+
+            if (counter[18] > 2) { // S
+                while (counter[18] > 2) {
+                    total += 45;
+                    counter[18] -= 3;
+                }
+            }
+            if (counter[19] > 2) { // T
+                while (counter[19] > 2) {
+                    total += 45;
+                    counter[19] -= 3;
+                }
+            }
+            if (counter[24] > 2) { // Y
+                while (counter[24] > 2) {
+                    total += 45;
+                    counter[24] -= 3;
+                }
+            }
+
+            if (counter[25] > 1 && counter[23] > 0) { // ZX
+                total += 45;
+                counter[25] -= 2;
+                counter[23] -= 1;
+            }
+            if (counter[25] > 0 && counter[23] > 1) { // ZX
+                total += 45;
+                counter[25] -= 1;
+                counter[23] -= 2;
+            }
+
+            if (counter[18] > 1 && counter[19] > 0) { // ST
+                total += 45;
+                counter[18] -= 2;
+                counter[19] -= 1;
+            }
+            if (counter[18] > 0 && counter[19] > 1) { // ST
+                total += 45;
+                counter[18] -= 1;
+                counter[19] -= 2;
+            }
+
+            if (counter[18] > 1 && counter[24] > 0) { // SY
+                total += 45;
+                counter[18] -= 2;
+                counter[24] -= 1;
+            }
+            if (counter[18] > 0 && counter[24] > 1) { // SY
+                total += 45;
+                counter[18] -= 1;
+                counter[24] -= 2;
+            }
+
+            if (counter[19] > 1 && counter[24] > 0) { // TY
+                total += 45;
+                counter[19] -= 2;
+                counter[24] -= 1;
+            }
+            if (counter[19] > 0 && counter[24] > 1) { // TY
+                total += 45;
+                counter[19] -= 1;
+                counter[24] -= 2;
+            }
+
+            if (counter[23] > 1 && counter[18] > 0) { // XS
+                total += 45;
+                counter[23] -= 2;
+                counter[18] -= 1;
+            }
+            if (counter[23] > 0 && counter[18] > 1) { // XS
+                total += 45;
+                counter[23] -= 1;
+                counter[18] -= 2;
+            }
+
+            if (counter[23] > 1 && counter[19] > 0) { // XT
+                total += 45;
+                counter[23] -= 2;
+                counter[19] -= 1;
+            }
+            if (counter[23] > 0 && counter[19] > 1) { // XT
+                total += 45;
+                counter[23] -= 1;
+                counter[19] -= 2;
+            }
+
+            if (counter[23] > 1 && counter[24] > 0) { // XY
+                total += 45;
+                counter[23] -= 2;
+                counter[24] -= 1;
+            }
+            if (counter[23] > 0 && counter[24] > 1) { // XY
+                total += 45;
+                counter[23] -= 1;
+                counter[24] -= 2;
+            }
+
+            if (counter[23] > 2) { // X
+                while (counter[23] > 2) {
+                    total += 45;
+                    counter[23] -= 3;
+                }
+            }
+        }
+
         for (int i = 0; i < 26; i++) {
             total += counter[i] * prices[i];
         }
         return total;
     }
 }
+
