@@ -6,6 +6,7 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         int len = skus.length();
         int countA = 0, countB = 0, countC = 0, countD = 0, countE = 0, countF = 0, aux;
+        int prices[]
         int total = 0;
         for (int i = 0; i < len; i++) {
             if (skus.charAt(i) == 'A') {
@@ -66,6 +67,7 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
 
