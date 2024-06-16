@@ -29,7 +29,7 @@ public class CheckoutSolution {
         }
 
         if (countB > 1) {
-            while (countA > 1) {
+            while (countB > 1) {
                 total += 45;
                 countB -= 2;
             }
@@ -40,3 +40,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
