@@ -6,7 +6,8 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         int len = skus.length();
         int aux;
-        int[] prices = new int[26];
+        int[] prices = { 50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 80, 90, 15, 40, 10, 50, 30, 50, 30, 20, 40, 50, 20, 90,
+                10, 50 };
         int[] counter = new int[26];
         int total = 0;
         for (int i = 0; i < len; i++) {
@@ -67,28 +68,29 @@ public class CheckoutSolution {
             }
         }
 
-        if (counter[0] > 4) {
+        if (counter[0] > 4) {// A
             while (counter[0] > 4) {
                 total += 200;
                 counter[0] -= 5;
             }
         }
 
-        if (counter[0] > 2) {
+        if (counter[0] > 2) {// A
             while (counter[0] > 2) {
                 total += 130;
                 counter[0] -= 3;
             }
         }
+
         aux = counter[4];
-        if (counter[4] > 1) {
+        if (counter[4] > 1) {// E
             while (counter[1] > 0 && aux > 1) {
                 counter[1] -= 1;
                 aux -= 2;
             }
         }
 
-        if (counter[1] > 1) {
+        if (counter[1] > 1) {// B
             while (counter[1] > 1) {
                 total += 45;
                 counter[1] -= 2;
@@ -96,7 +98,7 @@ public class CheckoutSolution {
         }
 
         aux = counter[5];
-        if (counter[5] > 2) {
+        if (counter[5] > 2) {// F
             while (counter[5] > 1 && aux > 1) {
                 counter[5] -= 1;
                 aux -= 3;
@@ -107,6 +109,58 @@ public class CheckoutSolution {
             total += counter[i] * prices[i];
         }
 
+        if (counter[7] > 9) { // H
+            while (counter[7] > 9) {
+                total += 80;
+                counter[7] -= 10;
+            }
+        }
+
+        if (counter[7] > 4) {// H
+            while (counter[7] > 4) {
+                total += 45;
+                counter[7] -= 5;
+            }
+        }
+
+        if (counter[10] > 1) {// K
+            while (counter[10] > 1) {
+                total += 150;
+                counter[10] -= 2;
+            }
+        }
+
+        aux = counter[13];
+        if (counter[13] > 2) {// N
+            while (counter[12] > 0 && aux > 2) {
+                counter[12] -= 1;
+                aux -= 3;
+            }
+        }
+
+        if (counter[15] > 4) {// P
+            while (counter[15] > 4) {
+                total += 200;
+                counter[15] -= 5;
+            }
+        }
+
+        aux = counter[17];
+        if (counter[17] > 2) {// N
+            while (counter[16] > 0 && aux > 2) {
+                counter[16] -= 1;
+                aux -= 3;
+            }
+        }
+
+        if (counter[16] > 2) {// Q
+            while (counter[16] > 2) {
+                total += 80;
+                counter[16] -= 3;
+            }
+        }
+
         return total;
     }
 }
+
